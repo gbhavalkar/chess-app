@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Chess App
+ An chess application in react with Redux for state management. 
+
+##Objectives
+Objective of this project is to learn state management using [idiomatic](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) redux. 
+Also maintaining the history of actions performed to perform the [undo and redo](https://redux.js.org/recipes/implementing-undo-history) functionality using redux in an efficient way.
+
 
 ## Available Scripts
 
