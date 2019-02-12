@@ -1,0 +1,5 @@
+export const ADD_MOVE = "ADD_MOVE"
+export const UPDATE_BOARD_POSITION = "UPDATE_BOARD_POSITION"
+export const UPDATE_NO_OF_MOVES = "UPDATE_NO_OF_MOVES"
+export const UNDO_MOVE = "UNDO_MOVE"
+export const REDO_MOVE = "REDO_MOVE"
