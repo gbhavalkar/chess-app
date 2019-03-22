@@ -1,4 +1,4 @@
-export const ChessBoardPieces = {
+const ChessBoardPieces = {
     "PAWN": "pawn",
     "ROOK": "rook",
     "KNIGHT": "knight",
@@ -6,3 +6,8 @@ export const ChessBoardPieces = {
     "QUEEN": "queen",
     "KING": "king"
 }
+export const Houses = {
+    "WHITE": "white",
+    "BLACK": "black"
+}
+export default ChessBoardPieces;

@@ -1,10 +1,8 @@
 import { createReducer } from 'redux-starter-kit'
 import * as actions from '../actions/actions'
-
+import getInitialState from '../util/initialState'
 // Setting the initial state supplied to the chess board
-const initialState = {
-}
-
+const initialState = getInitialState();
 /**
  * * Reducer containing state of the chessboard maintaining the properties describing 
  * * the value a position on the chessboard holds 
