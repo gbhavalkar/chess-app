@@ -12,23 +12,27 @@ const getInitialState = () => {
     //positions key in the reducer containing array of objects 
     //that track of all the values occuring on that position on chess board
     let positions = {}
-    for( let xIndex = 1; xIndex <= 8; xIndex++){
-        for( let yIndex = 1; yIndex <= 8; yIndex++){
+    for( let yIndex = 1; yIndex <= 8; yIndex++){
+        for( let xIndex = 1; xIndex <= 8; xIndex++){
             let position = [xIndex, yIndex].join(',')
             switch(yIndex){
-                case 2: positions[position] = [ getBlackHouseObject( ChessBoardPieces.PAWN ) ]
+                case 2: positions[position] = getBlackHouseObject( ChessBoardPieces.PAWN ) 
                 break;
-                case 7: positions[position] = [ getWhiteHouseObject( ChessBoardPieces.PAWN ) ]
+                case 7: positions[position] = getWhiteHouseObject( ChessBoardPieces.PAWN ) 
                 break;
-                case 1: positions[position] = [ getBlackHouseObject( boardPositionMap[xIndex] ) ]
+                case 1: positions[position] = getBlackHouseObject( boardPositionMap[xIndex] ) 
                 break;
-                case 8: positions[position] = [ getWhiteHouseObject( boardPositionMap[xIndex] ) ]
+                case 8: positions[position] = getWhiteHouseObject( boardPositionMap[xIndex] )
                 break;
             }
         }
     }
     //setting the positions array in the initial state
-    initialState['positions'] = positions
+    initialState['chessBoard'] = positions
+    initialState['capturedPieces'] = {
+        [Houses.WHITE]: [],
+        [Houses.BLACK]: []
+    }
     return initialState
 }
 

@@ -25,57 +25,54 @@ describe('initial state for chess board reducer', () => {
         expect(mockInitialState.chessBoard).toBeDefined()
     })
 
-    it('chessBoard object should be empty', () => {
-        expect(mockInitialState.chessBoard).toStrictEqual({})
-    })
 
     it('the second row should be pawns of house Black', () => {
         //get the second row keys
-        const keysToMatch = Object.keys(mockInitialState.positions).filter( positionKey => positionKey.split(',')[1] === '2')
-        const expectedStateObject = [{
+        const keysToMatch = Object.keys(mockInitialState.chessBoard).filter( positionKey => positionKey.split(',')[1] === '2')
+        const expectedStateObject = {
             value: ChessBoardPieces.PAWN,
             house: Houses.BLACK
-        }]
+        }
         keysToMatch.map( keyToMatch => {
-            expect(mockInitialState.positions[keyToMatch]).toEqual(expectedStateObject)
+            expect(mockInitialState.chessBoard[keyToMatch]).toEqual(expectedStateObject)
         })
     })
 
     it('the second last row should be pawns of house White', () => {
         //get the second last row keys
-        const keysToMatch = Object.keys(mockInitialState.positions).filter( positionKey => positionKey.split(',')[1] === '7')
-        const expectedStateObject = [{
+        const keysToMatch = Object.keys(mockInitialState.chessBoard).filter( positionKey => positionKey.split(',')[1] === '7')
+        const expectedStateObject = {
             value: ChessBoardPieces.PAWN,
             house: Houses.WHITE
-        }]
+        }
         keysToMatch.map( keyToMatch => {
-            expect(mockInitialState.positions[keyToMatch]).toEqual(expectedStateObject)
+            expect(mockInitialState.chessBoard[keyToMatch]).toEqual(expectedStateObject)
         })
     })
 
     it('the first row should match with values of `boardPositionMap` of house Black', () => {
         //get the first row keys
-        const keysToMatch = Object.keys(mockInitialState.positions).filter( positionKey => positionKey.split(',')[1] === '1')
+        const keysToMatch = Object.keys(mockInitialState.chessBoard).filter( positionKey => positionKey.split(',')[1] === '1')
         keysToMatch.map( keyToMatch => {
             const xPosition = keyToMatch.split(',')[0]
-            const expectedStateObject = [{
+            const expectedStateObject = {
                 value: boardPositionMap[xPosition],
                 house: Houses.BLACK
-            }]
-            expect(mockInitialState.positions[keyToMatch]).toEqual(expectedStateObject)
+            }
+            expect(mockInitialState.chessBoard[keyToMatch]).toEqual(expectedStateObject)
         })
     })
 
     it('the last row should match with values of `boardPositionMap` of house White', () => {
         //get the first row keys
-        const keysToMatch = Object.keys(mockInitialState.positions).filter( positionKey => positionKey.split(',')[1] === '8')
+        const keysToMatch = Object.keys(mockInitialState.chessBoard).filter( positionKey => positionKey.split(',')[1] === '8')
         keysToMatch.map( keyToMatch => {
             const xPosition = keyToMatch.split(',')[0]
-            const expectedStateObject = [{
+            const expectedStateObject = {
                 value: boardPositionMap[xPosition],
                 house: Houses.WHITE
-            }]
-            expect(mockInitialState.positions[keyToMatch]).toEqual(expectedStateObject)
+            }
+            expect(mockInitialState.chessBoard[keyToMatch]).toEqual(expectedStateObject)
         })
     })
 })
