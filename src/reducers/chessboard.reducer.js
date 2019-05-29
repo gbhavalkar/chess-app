@@ -1,6 +1,9 @@
 import { createReducer } from 'redux-starter-kit'
+import undoable, {distinctState} from 'redux-undo'
 import * as actions from '../actions/actions'
+import * as actionConstants from '../actions/action.constant'
 import getInitialState from '../util/initialState'
+
 
 // Setting the initial state supplied to the chess board
 const initialState = getInitialState();
@@ -31,5 +34,11 @@ const chessBoardReducer = createReducer( initialState, {
         state.chessBoard[updatedPositions.to] = updatedPositions.newPositionObject;
         return state;
     }
+})
+
+const enhancedChessBoardReducer = undoable(chessBoardReducer, {
+    undoType: actionConstants.UNDO_MOVE,
+    redoType: actionConstants.REDO_MOVE,
+    filter: distinctState()
 })
 export default chessBoardReducer;
