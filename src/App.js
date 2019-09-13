@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import styled from 'styled-components'
 import { injectGlobal } from 'styled-components'
 import Header from './components/Header/Header'
+import ChessBoard from './components/Chess/ChessBoard/ChessBoard'
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 body {
-    background-color: #C5C6C7;
+    background-color: #E9E9E9;
   }
 `
 class App extends Component {
@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header title="Chess App" />
+        <ChessBoard />
       </Fragment>
     );
   }

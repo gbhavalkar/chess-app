@@ -7,7 +7,7 @@ const Header = styled.header`
   text-align: center;
   font-size: 2.5em;
   color: #1F2833;
-  background: linear-gradient(#696969, #C5C6C7), linear-gradient(white, white);
+  background: linear-gradient(#dec8c8, #E9E9E9), linear-gradient(white, white);
   :hover{
     
   }
